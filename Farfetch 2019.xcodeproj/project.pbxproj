@@ -1,0 +1,745 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		15FDFEDF23671C3500A5739B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FDFEDE23671C3500A5739B /* AppDelegate.swift */; };
+		15FDFEE123671C3500A5739B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FDFEE023671C3500A5739B /* ViewController.swift */; };
+		15FDFEE623671C3800A5739B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15FDFEE523671C3800A5739B /* Assets.xcassets */; };
+		15FDFEE923671C3800A5739B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15FDFEE723671C3800A5739B /* LaunchScreen.storyboard */; };
+		15FDFEF423671C3800A5739B /* Farfetch_2019Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FDFEF323671C3800A5739B /* Farfetch_2019Tests.swift */; };
+		15FDFEFF23671C3800A5739B /* Farfetch_2019UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FDFEFE23671C3800A5739B /* Farfetch_2019UITests.swift */; };
+		15FDFF1E23671E0100A5739B /* ParametersEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FDFF0E23671E0100A5739B /* ParametersEncoding.swift */; };
+		15FDFF1F23671E0100A5739B /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FDFF0F23671E0100A5739B /* NetworkResponse.swift */; };
+		15FDFF2023671E0100A5739B /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FDFF1023671E0100A5739B /* HTTPMethod.swift */; };
+		15FDFF2123671E0100A5739B /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FDFF1123671E0100A5739B /* Task.swift */; };
+		15FDFF2223671E0100A5739B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FDFF1223671E0100A5739B /* NetworkError.swift */; };
+		15FDFF2323671E0100A5739B /* URLSessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FDFF1423671E0100A5739B /* URLSessionProvider.swift */; };
+		15FDFF2423671E0100A5739B /* URLComponentsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FDFF1623671E0100A5739B /* URLComponentsExtension.swift */; };
+		15FDFF2523671E0100A5739B /* URLRequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FDFF1723671E0100A5739B /* URLRequestExtension.swift */; };
+		15FDFF2623671E0100A5739B /* ServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FDFF1923671E0100A5739B /* ServiceProtocol.swift */; };
+		15FDFF2723671E0100A5739B /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FDFF1A23671E0100A5739B /* URLSessionProtocol.swift */; };
+		15FDFF2823671E0100A5739B /* ProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FDFF1B23671E0100A5739B /* ProviderProtocol.swift */; };
+		15FDFF2923671E0100A5739B /* MarvelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FDFF1D23671E0100A5739B /* MarvelService.swift */; };
+		15FDFF2C2367229200A5739B /* md5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FDFF2B2367229200A5739B /* md5.swift */; };
+		15FDFF2F2367492400A5739B /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FDFF2E2367492400A5739B /* Response.swift */; };
+		15FDFF3223676A0800A5739B /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FDFF3123676A0800A5739B /* CharacterCell.swift */; };
+		15FDFF3523676AE600A5739B /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FDFF3423676AE600A5739B /* UIView+Constraints.swift */; };
+		15FDFF3A236770C500A5739B /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FDFF39236770C500A5739B /* DetailsViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		15FDFEF023671C3800A5739B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 15FDFED323671C3500A5739B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 15FDFEDA23671C3500A5739B;
+			remoteInfo = "Farfetch 2019";
+		};
+		15FDFEFB23671C3800A5739B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 15FDFED323671C3500A5739B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 15FDFEDA23671C3500A5739B;
+			remoteInfo = "Farfetch 2019";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		15FDFEDB23671C3500A5739B /* Farfetch 2019.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Farfetch 2019.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		15FDFEDE23671C3500A5739B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		15FDFEE023671C3500A5739B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		15FDFEE523671C3800A5739B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		15FDFEE823671C3800A5739B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		15FDFEEA23671C3800A5739B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15FDFEEF23671C3800A5739B /* Farfetch 2019Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Farfetch 2019Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		15FDFEF323671C3800A5739B /* Farfetch_2019Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Farfetch_2019Tests.swift; sourceTree = "<group>"; };
+		15FDFEF523671C3800A5739B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15FDFEFA23671C3800A5739B /* Farfetch 2019UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Farfetch 2019UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		15FDFEFE23671C3800A5739B /* Farfetch_2019UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Farfetch_2019UITests.swift; sourceTree = "<group>"; };
+		15FDFF0023671C3800A5739B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15FDFF0E23671E0100A5739B /* ParametersEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParametersEncoding.swift; sourceTree = "<group>"; };
+		15FDFF0F23671E0100A5739B /* NetworkResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
+		15FDFF1023671E0100A5739B /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		15FDFF1123671E0100A5739B /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		15FDFF1223671E0100A5739B /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		15FDFF1423671E0100A5739B /* URLSessionProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionProvider.swift; sourceTree = "<group>"; };
+		15FDFF1623671E0100A5739B /* URLComponentsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLComponentsExtension.swift; sourceTree = "<group>"; };
+		15FDFF1723671E0100A5739B /* URLRequestExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestExtension.swift; sourceTree = "<group>"; };
+		15FDFF1923671E0100A5739B /* ServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceProtocol.swift; sourceTree = "<group>"; };
+		15FDFF1A23671E0100A5739B /* URLSessionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
+		15FDFF1B23671E0100A5739B /* ProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderProtocol.swift; sourceTree = "<group>"; };
+		15FDFF1D23671E0100A5739B /* MarvelService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelService.swift; sourceTree = "<group>"; };
+		15FDFF2B2367229200A5739B /* md5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = md5.swift; sourceTree = "<group>"; };
+		15FDFF2E2367492400A5739B /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		15FDFF3123676A0800A5739B /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
+		15FDFF3423676AE600A5739B /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
+		15FDFF39236770C500A5739B /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		15FDFED823671C3500A5739B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15FDFEEC23671C3800A5739B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15FDFEF723671C3800A5739B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		15FDFED223671C3500A5739B = {
+			isa = PBXGroup;
+			children = (
+				15FDFEDD23671C3500A5739B /* Farfetch 2019 */,
+				15FDFEF223671C3800A5739B /* Farfetch 2019Tests */,
+				15FDFEFD23671C3800A5739B /* Farfetch 2019UITests */,
+				15FDFEDC23671C3500A5739B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		15FDFEDC23671C3500A5739B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				15FDFEDB23671C3500A5739B /* Farfetch 2019.app */,
+				15FDFEEF23671C3800A5739B /* Farfetch 2019Tests.xctest */,
+				15FDFEFA23671C3800A5739B /* Farfetch 2019UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		15FDFEDD23671C3500A5739B /* Farfetch 2019 */ = {
+			isa = PBXGroup;
+			children = (
+				15FDFEDE23671C3500A5739B /* AppDelegate.swift */,
+				15FDFF3823676FEA00A5739B /* Controller */,
+				15FDFF3323676A0B00A5739B /* View */,
+				15FDFF302367559B00A5739B /* Model */,
+				15FDFF0C23671E0100A5739B /* Networking */,
+				15FDFF3623676AF500A5739B /* Utils */,
+				15FDFF2A23671E2200A5739B /* Resources */,
+			);
+			path = "Farfetch 2019";
+			sourceTree = "<group>";
+		};
+		15FDFEF223671C3800A5739B /* Farfetch 2019Tests */ = {
+			isa = PBXGroup;
+			children = (
+				15FDFEF323671C3800A5739B /* Farfetch_2019Tests.swift */,
+				15FDFEF523671C3800A5739B /* Info.plist */,
+			);
+			path = "Farfetch 2019Tests";
+			sourceTree = "<group>";
+		};
+		15FDFEFD23671C3800A5739B /* Farfetch 2019UITests */ = {
+			isa = PBXGroup;
+			children = (
+				15FDFEFE23671C3800A5739B /* Farfetch_2019UITests.swift */,
+				15FDFF0023671C3800A5739B /* Info.plist */,
+			);
+			path = "Farfetch 2019UITests";
+			sourceTree = "<group>";
+		};
+		15FDFF0C23671E0100A5739B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				15FDFF0D23671E0100A5739B /* Enums */,
+				15FDFF1323671E0100A5739B /* Provider */,
+				15FDFF1523671E0100A5739B /* Extensions */,
+				15FDFF1823671E0100A5739B /* Protocols */,
+				15FDFF1C23671E0100A5739B /* Services */,
+				15FDFF2D2367229500A5739B /* Utils */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		15FDFF0D23671E0100A5739B /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				15FDFF0E23671E0100A5739B /* ParametersEncoding.swift */,
+				15FDFF0F23671E0100A5739B /* NetworkResponse.swift */,
+				15FDFF1023671E0100A5739B /* HTTPMethod.swift */,
+				15FDFF1123671E0100A5739B /* Task.swift */,
+				15FDFF1223671E0100A5739B /* NetworkError.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		15FDFF1323671E0100A5739B /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				15FDFF1423671E0100A5739B /* URLSessionProvider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		15FDFF1523671E0100A5739B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				15FDFF1623671E0100A5739B /* URLComponentsExtension.swift */,
+				15FDFF1723671E0100A5739B /* URLRequestExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		15FDFF1823671E0100A5739B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				15FDFF1923671E0100A5739B /* ServiceProtocol.swift */,
+				15FDFF1A23671E0100A5739B /* URLSessionProtocol.swift */,
+				15FDFF1B23671E0100A5739B /* ProviderProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		15FDFF1C23671E0100A5739B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				15FDFF1D23671E0100A5739B /* MarvelService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		15FDFF2A23671E2200A5739B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				15FDFEE523671C3800A5739B /* Assets.xcassets */,
+				15FDFEE723671C3800A5739B /* LaunchScreen.storyboard */,
+				15FDFEEA23671C3800A5739B /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		15FDFF2D2367229500A5739B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				15FDFF2B2367229200A5739B /* md5.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		15FDFF302367559B00A5739B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				15FDFF2E2367492400A5739B /* Response.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		15FDFF3323676A0B00A5739B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				15FDFF3123676A0800A5739B /* CharacterCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		15FDFF3623676AF500A5739B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				15FDFF3723676AFC00A5739B /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		15FDFF3723676AFC00A5739B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				15FDFF3423676AE600A5739B /* UIView+Constraints.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		15FDFF3823676FEA00A5739B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				15FDFEE023671C3500A5739B /* ViewController.swift */,
+				15FDFF39236770C500A5739B /* DetailsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		15FDFEDA23671C3500A5739B /* Farfetch 2019 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15FDFF0323671C3800A5739B /* Build configuration list for PBXNativeTarget "Farfetch 2019" */;
+			buildPhases = (
+				15FDFED723671C3500A5739B /* Sources */,
+				15FDFED823671C3500A5739B /* Frameworks */,
+				15FDFED923671C3500A5739B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Farfetch 2019";
+			productName = "Farfetch 2019";
+			productReference = 15FDFEDB23671C3500A5739B /* Farfetch 2019.app */;
+			productType = "com.apple.product-type.application";
+		};
+		15FDFEEE23671C3800A5739B /* Farfetch 2019Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15FDFF0623671C3800A5739B /* Build configuration list for PBXNativeTarget "Farfetch 2019Tests" */;
+			buildPhases = (
+				15FDFEEB23671C3800A5739B /* Sources */,
+				15FDFEEC23671C3800A5739B /* Frameworks */,
+				15FDFEED23671C3800A5739B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				15FDFEF123671C3800A5739B /* PBXTargetDependency */,
+			);
+			name = "Farfetch 2019Tests";
+			productName = "Farfetch 2019Tests";
+			productReference = 15FDFEEF23671C3800A5739B /* Farfetch 2019Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		15FDFEF923671C3800A5739B /* Farfetch 2019UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15FDFF0923671C3800A5739B /* Build configuration list for PBXNativeTarget "Farfetch 2019UITests" */;
+			buildPhases = (
+				15FDFEF623671C3800A5739B /* Sources */,
+				15FDFEF723671C3800A5739B /* Frameworks */,
+				15FDFEF823671C3800A5739B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				15FDFEFC23671C3800A5739B /* PBXTargetDependency */,
+			);
+			name = "Farfetch 2019UITests";
+			productName = "Farfetch 2019UITests";
+			productReference = 15FDFEFA23671C3800A5739B /* Farfetch 2019UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		15FDFED323671C3500A5739B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Bruno;
+				TargetAttributes = {
+					15FDFEDA23671C3500A5739B = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					15FDFEEE23671C3800A5739B = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 15FDFEDA23671C3500A5739B;
+					};
+					15FDFEF923671C3800A5739B = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 15FDFEDA23671C3500A5739B;
+					};
+				};
+			};
+			buildConfigurationList = 15FDFED623671C3500A5739B /* Build configuration list for PBXProject "Farfetch 2019" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 15FDFED223671C3500A5739B;
+			productRefGroup = 15FDFEDC23671C3500A5739B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				15FDFEDA23671C3500A5739B /* Farfetch 2019 */,
+				15FDFEEE23671C3800A5739B /* Farfetch 2019Tests */,
+				15FDFEF923671C3800A5739B /* Farfetch 2019UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		15FDFED923671C3500A5739B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15FDFEE923671C3800A5739B /* LaunchScreen.storyboard in Resources */,
+				15FDFEE623671C3800A5739B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15FDFEED23671C3800A5739B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15FDFEF823671C3800A5739B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		15FDFED723671C3500A5739B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15FDFF2723671E0100A5739B /* URLSessionProtocol.swift in Sources */,
+				15FDFEE123671C3500A5739B /* ViewController.swift in Sources */,
+				15FDFF2523671E0100A5739B /* URLRequestExtension.swift in Sources */,
+				15FDFF3523676AE600A5739B /* UIView+Constraints.swift in Sources */,
+				15FDFF2C2367229200A5739B /* md5.swift in Sources */,
+				15FDFF2223671E0100A5739B /* NetworkError.swift in Sources */,
+				15FDFF2423671E0100A5739B /* URLComponentsExtension.swift in Sources */,
+				15FDFF2823671E0100A5739B /* ProviderProtocol.swift in Sources */,
+				15FDFF2923671E0100A5739B /* MarvelService.swift in Sources */,
+				15FDFF2F2367492400A5739B /* Response.swift in Sources */,
+				15FDFF1F23671E0100A5739B /* NetworkResponse.swift in Sources */,
+				15FDFF1E23671E0100A5739B /* ParametersEncoding.swift in Sources */,
+				15FDFF2023671E0100A5739B /* HTTPMethod.swift in Sources */,
+				15FDFF3A236770C500A5739B /* DetailsViewController.swift in Sources */,
+				15FDFF3223676A0800A5739B /* CharacterCell.swift in Sources */,
+				15FDFF2323671E0100A5739B /* URLSessionProvider.swift in Sources */,
+				15FDFF2123671E0100A5739B /* Task.swift in Sources */,
+				15FDFEDF23671C3500A5739B /* AppDelegate.swift in Sources */,
+				15FDFF2623671E0100A5739B /* ServiceProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15FDFEEB23671C3800A5739B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15FDFEF423671C3800A5739B /* Farfetch_2019Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15FDFEF623671C3800A5739B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15FDFEFF23671C3800A5739B /* Farfetch_2019UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		15FDFEF123671C3800A5739B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 15FDFEDA23671C3500A5739B /* Farfetch 2019 */;
+			targetProxy = 15FDFEF023671C3800A5739B /* PBXContainerItemProxy */;
+		};
+		15FDFEFC23671C3800A5739B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 15FDFEDA23671C3500A5739B /* Farfetch 2019 */;
+			targetProxy = 15FDFEFB23671C3800A5739B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		15FDFEE723671C3800A5739B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				15FDFEE823671C3800A5739B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		15FDFF0123671C3800A5739B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		15FDFF0223671C3800A5739B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		15FDFF0423671C3800A5739B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Farfetch 2019/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brunosilva.Farfetch-2019";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		15FDFF0523671C3800A5739B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Farfetch 2019/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brunosilva.Farfetch-2019";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		15FDFF0723671C3800A5739B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Farfetch 2019Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brunosilva.Farfetch-2019Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Farfetch 2019.app/Farfetch 2019";
+			};
+			name = Debug;
+		};
+		15FDFF0823671C3800A5739B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Farfetch 2019Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brunosilva.Farfetch-2019Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Farfetch 2019.app/Farfetch 2019";
+			};
+			name = Release;
+		};
+		15FDFF0A23671C3800A5739B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Farfetch 2019UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brunosilva.Farfetch-2019UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Farfetch 2019";
+			};
+			name = Debug;
+		};
+		15FDFF0B23671C3800A5739B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Farfetch 2019UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brunosilva.Farfetch-2019UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Farfetch 2019";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		15FDFED623671C3500A5739B /* Build configuration list for PBXProject "Farfetch 2019" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15FDFF0123671C3800A5739B /* Debug */,
+				15FDFF0223671C3800A5739B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		15FDFF0323671C3800A5739B /* Build configuration list for PBXNativeTarget "Farfetch 2019" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15FDFF0423671C3800A5739B /* Debug */,
+				15FDFF0523671C3800A5739B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		15FDFF0623671C3800A5739B /* Build configuration list for PBXNativeTarget "Farfetch 2019Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15FDFF0723671C3800A5739B /* Debug */,
+				15FDFF0823671C3800A5739B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		15FDFF0923671C3800A5739B /* Build configuration list for PBXNativeTarget "Farfetch 2019UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15FDFF0A23671C3800A5739B /* Debug */,
+				15FDFF0B23671C3800A5739B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 15FDFED323671C3500A5739B /* Project object */;
+}
