@@ -27,20 +27,24 @@ class ComicCell: UICollectionViewCell, ModelPresenterCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func set(comicItem: Result) {
-        model = comicItem
+    func set(model: Result) {
+        self.model = model
         
         guard let model = self.model else {
             return
         }
         
         labelTitle.text = model.title
-        imageView.loadImageWith(urlString: model.thumbnail.getImageUrl(size: .medium))
+        if let urlString = model.thumbnail?.getImageUrl(size: .medium) {
+            imageView.loadImageWith(urlString: urlString)
+        }
         labelIssueNumber.text = model.issueNumberAsString
     }
     
     func setupUI() {
         imageView = CustomImageView()
+        imageView.image = UIImage(named: "portrait_medium")
+        imageView.backgroundColor = .black
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         

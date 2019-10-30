@@ -11,6 +11,9 @@ enum MarvelService: ServiceProtocol {
 
     case characters(offset: Int)
     case comics(id: Int)
+    case stories(id: Int)
+    case events(id: Int)
+    case series(id: Int)
 
     var path: String {
         switch self {
@@ -18,6 +21,12 @@ enum MarvelService: ServiceProtocol {
             return "characters"
         case .comics(let identifier):
             return "characters/\(identifier)/comics"
+        case .stories(let identifier):
+            return "characters/\(identifier)/stories"
+        case .events(let identifier):
+            return "characters/\(identifier)/events"
+        case .series(let identifier):
+            return "characters/\(identifier)/series"
         }
     }
 
@@ -30,7 +39,10 @@ enum MarvelService: ServiceProtocol {
         case let .characters(offset):
             let parameters = ["offset": offset]
             return .requestParameters(parameters)
-        case .comics:
+        case .comics,
+             .stories,
+             .events,
+             .series:
             return .requestPlain
         }
     }

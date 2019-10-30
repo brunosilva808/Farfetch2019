@@ -19,7 +19,6 @@ class ContainerCell: BaseCell, ModelPresenterCell {
     override func setupUI() {
         
         labelTitle = UILabel()
-        labelTitle.backgroundColor = .yellow
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -47,13 +46,11 @@ class ContainerCell: BaseCell, ModelPresenterCell {
         self.model = comics
         self.labelTitle.text = title
         
-        if let count = self.model?.count, count > 3 {
-            for i in 0...2 {
-                if let comic = self.model?[i] {
-                    let comicCell = ComicCell()
-                    comicCell.set(comicItem: comic)
-                    comicCells.append(comicCell)
-                }
+        for i in 0...min(2, comics.count - 1) {
+            if let model = self.model?[i] {
+                let comicCell = ComicCell()
+                comicCell.set(model: model)
+                comicCells.append(comicCell)
             }
         }
     }
@@ -68,9 +65,8 @@ extension ContainerCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ComicCell
         if let model = model?[indexPath.row] {
-            cell.set(comicItem: model)
+            cell.set(model: model)
         }
-        cell.backgroundColor = .yellow
 
         return cell
     }

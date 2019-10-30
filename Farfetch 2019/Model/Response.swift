@@ -17,7 +17,7 @@ struct Response: Codable {
 
 struct DataClass: Codable {
     let offset, limit, total, count: Int
-    let results: [Result]
+    let results: [Result]?
 }
 
 struct Result: Codable {
@@ -25,7 +25,7 @@ struct Result: Codable {
     let name: String?
     let title: String?
     let issueNumber: Int?
-    let thumbnail: Thumbnail
+    let thumbnail: Thumbnail?
     let comics, series, events, stories: Comics?
     
     var issueNumberAsString: String {

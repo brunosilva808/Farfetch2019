@@ -12,79 +12,153 @@ class DetailsViewController: StaticTableController {
 
     fileprivate let cellId = "cellId"
     fileprivate var result: Result!
-    fileprivate var characterCell: CharacterCell!
-    fileprivate var comicsCell: ContainerCell?
-//    fileprivate var storiesCell: GalleryCell?
-//    fileprivate var eventsCell: GalleryCell?
-//    fileprivate var seriesCell: GalleryCell?
+    fileprivate lazy var characterCell: CharacterCell = CharacterCell()
+    fileprivate lazy var comicsCell: ContainerCell = ContainerCell()
+    fileprivate lazy var storiesCell: ContainerCell = ContainerCell()
+    fileprivate lazy var eventsCell: ContainerCell = ContainerCell()
+    fileprivate lazy var seriesCell: ContainerCell = ContainerCell()
+    fileprivate var dispatchGroup: DispatchGroup!
     fileprivate var sessionProvider: URLSessionProvider!
 //    var updateCharacter: ((String) -> Void)?
     
     init(result: Result) {
         self.result = result
-        self.characterCell = CharacterCell()
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.register(CharacterCell.self, forCellReuseIdentifier: cellId)
+        setupAPICalls()
+        setupTableViewAndCells()
+    }
+    
+    fileprivate func setupAPICalls() {
+        
+        dispatchGroup = DispatchGroup()
+        sessionProvider = URLSessionProvider()
+        
         getComics()
-        setupCells()
+        getStories()
+        getSeries()
+        getEvents()
+        
+        self.dispatchGroup.notify(queue: .main) {
+            self.tableView.reloadData()
+        }
     }
     
     fileprivate func getComics() {
 
         if result.comics?.available != 0 {
-            sessionProvider = URLSessionProvider()
+            self.dispatchGroup.enter()
+            
             sessionProvider.request(type: Response.self, service: MarvelService.comics(id: result.id), completion: { [weak self] (response) in
                 switch response {
                 case let .success(response):
                     DispatchQueue.main.async {
                         if let results = response.data?.results {
-                            self?.comicsCell = ContainerCell()
-                            self?.comicsCell?.set(title: "Comic", comics: results)
+                            self?.comicsCell.set(title: "Comic", comics: results)
                             self?.cells.append((self?.comicsCell)!)
-                            self?.tableView.reloadData()
                         }
                     }
                 case let .failure(error):
                     print(error)
                 }
-            }) {}
+            }) { [weak self] in
+                self?.dispatchGroup.leave()
+            }
         }
     }
     
-    fileprivate func setupCells() {
+    fileprivate func getStories() {
+        
+        if result.stories?.available != 0 {
+            self.dispatchGroup.enter()
+            
+            sessionProvider.request(type: Response.self, service: MarvelService.stories(id: result.id), completion: { [weak self] (response) in
+                switch response {
+                case let .success(response):
+                    DispatchQueue.main.async {
+                        if let results = response.data?.results {
+                            self?.storiesCell.set(title: "Stories", comics: results)
+                            if let cell = self?.storiesCell {
+                                self?.cells.append(cell)
+                            }
+                        }
+                    }
+                case let .failure(error):
+                    print(error)
+                }
+            }) { [weak self] in
+                self?.dispatchGroup.leave()
+            }
+        }
+    }
+    
+    fileprivate func getEvents() {
+        
+        if result.events?.available != 0 {
+            self.dispatchGroup.enter()
+            
+            sessionProvider.request(type: Response.self, service: MarvelService.events(id: result.id), completion: { [weak self] (response) in
+                switch response {
+                case let .success(response):
+                    DispatchQueue.main.async {
+                        if let results = response.data?.results {
+                            self?.eventsCell.set(title: "Events", comics: results)
+                            self?.cells.append((self?.eventsCell)!)
+                        }
+                    }
+                case let .failure(error):
+                    print(error)
+                }
+            }) { [weak self] in
+                self?.dispatchGroup.leave()
+            }
+        }
+    }
+    
+    fileprivate func getSeries() {
+        
+        if result.series?.available != 0 {
+            self.dispatchGroup.enter()
+            
+            sessionProvider.request(type: Response.self, service: MarvelService.series(id: result.id), completion: { [weak self] (response) in
+                switch response {
+                case let .success(response):
+                    DispatchQueue.main.async {
+                        if let results = response.data?.results {
+                            self?.seriesCell.set(title: "Series", comics: results)
+                            self?.cells.append((self?.seriesCell)!)
+                        }
+                    }
+                case let .failure(error):
+                    print(error)
+                }
+            }) { [weak self] in
+                self?.dispatchGroup.leave()
+            }
+        }
+    }
+    
+    
+    fileprivate func setupTableViewAndCells() {
+        
+        tableView.register(CharacterCell.self, forCellReuseIdentifier: cellId)
         
         characterCell.set(result: result)
         cells.append(characterCell)
-        
-//        if let comics = result.stories, comics.available != 0 {
-//            storiesCell = GalleryCell()
-//            storiesCell?.set(title: "Stories", comics: comics)
-//            cells.append(storiesCell!)
-//        }
-//        if let comics = result.events, comics.available != 0 {
-//            eventsCell = GalleryCell()
-//            eventsCell?.set(title: "Events", comics: comics)
-//            cells.append(eventsCell!)
-//        }
-//        if let comics = result.series, comics.available != 0 {
-//            seriesCell = GalleryCell()
-//            seriesCell?.set(title: "Series", comics: comics)
-//            cells.append(seriesCell!)
-//        }
     }
     
     deinit {
         sessionProvider.cancelTask()
         sessionProvider = nil
+        dispatchGroup = nil
     }
 
 }
