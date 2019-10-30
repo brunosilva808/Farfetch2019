@@ -10,11 +10,14 @@ import Foundation
 enum MarvelService: ServiceProtocol {
 
     case characters(offset: Int)
+    case comics(id: Int)
 
     var path: String {
         switch self {
         case .characters:
             return "characters"
+        case .comics(let identifier):
+            return "characters/\(identifier)/comics"
         }
     }
 
@@ -27,6 +30,8 @@ enum MarvelService: ServiceProtocol {
         case let .characters(offset):
             let parameters = ["offset": offset]
             return .requestParameters(parameters)
+        case .comics:
+            return .requestPlain
         }
     }
 

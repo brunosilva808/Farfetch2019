@@ -8,35 +8,32 @@
 
 import UIKit
 
-class CharacterCell: UITableViewCell {
+protocol CharacterCellDelegate: class {
+    func favoriteButtonPressed(id: Int)
+}
+
+class CharacterCell: BaseCell, ModelPresenterCell {
+    fileprivate var labelName: UILabel!
+    fileprivate var buttonFavorites: UIButton!
+    internal var model: Result?
+    weak var delegate: CharacterCellDelegate?
     
-    fileprivate let labelName: UILabel = UILabel()
-    fileprivate let buttonFavorites: UIButton = UIButton()
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        setupUI()
-        setupViews()
+    func set(result: Result) {
+        self.model = result
+        labelName.text = result.name
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func set(text: String) {
-        labelName.text = text
-    }
-    
-    fileprivate func setupUI() {
+    internal override func setupUI() {
+        labelName = UILabel()
         labelName.textAlignment = .left
         
+        buttonFavorites = UIButton()
         buttonFavorites.setImage(UIImage(named: "favorite_unselected"), for: .normal)
         buttonFavorites.setImage(UIImage(named: "favorite_selected"), for: .selected)
         buttonFavorites.addTarget(self, action: #selector(favouriteButtonPressed), for: .touchUpInside)
     }
     
-    fileprivate func setupViews() {
+    internal override func setupViews() {
         addSubview(labelName)
         addSubview(buttonFavorites)
         
@@ -50,5 +47,8 @@ class CharacterCell: UITableViewCell {
     
     @objc fileprivate func favouriteButtonPressed() {
         buttonFavorites.isSelected = !buttonFavorites.isSelected
+        if let id = model?.id {
+            delegate?.favoriteButtonPressed(id: id)
+        }
     }
 }

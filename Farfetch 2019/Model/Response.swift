@@ -8,85 +8,83 @@
 
 import Foundation
 
-// MARK: - Response
 struct Response: Codable {
     let code: Int?
-//    let copyright, attributionText, attributionHTML: String
-//    let etag: String
+    let status: String?
+    let message: String?
     let data: DataClass?
 }
 
-// MARK: - DataClass
 struct DataClass: Codable {
-//    let offset, limit, count: Int
-    let total: Int?
-    let results: [Result]?
+    let offset, limit, total, count: Int
+    let results: [Result]
 }
 
-// MARK: - Result
 struct Result: Codable {
     let id: Int
-    let name: String
-//    let resultDescription: String
-//    let modified: Date
-//    let thumbnail: Thumbnail
-//    let resourceURI: String
-    let comics: Comics?
-//    let series: Comics?
-//    let events: Comics?
-//    let stories: Stories?
-//    let urls: [URLElement]
-//
-//    enum CodingKeys: String, CodingKey {
-//        case id, name
-//        case resultDescription = "description"
-//        case modified, thumbnail, resourceURI, comics, series, stories, events, urls
-//    }
+    let name: String?
+    let title: String?
+    let issueNumber: Int?
+    let thumbnail: Thumbnail
+    let comics, series, events, stories: Comics?
+    
+    var issueNumberAsString: String {
+        if let number = self.issueNumber {
+            return "Issue #\(number)"
+        } else {
+            return ""
+        }
+    }
 }
 
-// MARK: - Comics
-struct Comics: Codable {
-    let available: Int?
-//    let collectionURI: String
-//    let items: [ComicsItem]
-//    let returned: Int
-}
-
-// MARK: - ComicsItem
-struct ComicsItem: Codable {
-    let resourceURI: String
-    let name: String
-}
-
-// MARK: - Stories
-struct Stories: Codable {
-    let available: Int
-    let collectionURI: String
-    let items: [StoriesItem]
-    let returned: Int
-}
-
-// MARK: - StoriesItem
-struct StoriesItem: Codable {
-    let resourceURI: String
-    let name: String
-    let type: ItemType
-}
-
-enum ItemType: String, Codable {
-    case cover = "cover"
-    case empty = ""
-    case interiorStory = "interiorStory"
-}
-
-// MARK: - Thumbnail
 struct Thumbnail: Codable {
     let path: String
-    let thumbnailExtension: Extension
+    let thumbnailExtension: String
     
     enum CodingKeys: String, CodingKey {
         case path
         case thumbnailExtension = "extension"
+    }
+    
+    enum Portrait {
+        case small
+        case medium
+        case xlarge
+        case fantastic
+        case uncanny
+        case incredible
+        case Void()
+    }
+    
+    func getImageUrl(size: Portrait) -> String {
+        var urlString = self.path
+        
+        switch size {
+        case .small:
+            urlString += "/portrait_small"
+            break
+        case .medium:
+            urlString += "/portrait_medium"
+            break
+        case .xlarge:
+            urlString += "/portrait_xlarge"
+            break
+        case .fantastic:
+            urlString += "/portrait_fantastic"
+            break
+        case .uncanny:
+            urlString += "/portrait_uncanny"
+            break
+        case .incredible:
+            urlString += "/portrait_incredible"
+            break
+        default:
+            break
+        }
+        
+        urlString += "." + self.thumbnailExtension
+        
+        return urlString
     }
 }
 
@@ -95,14 +93,7 @@ enum Extension: String, Codable {
     case jpg = "jpg"
 }
 
-// MARK: - URLElement
-struct URLElement: Codable {
-    let type: URLType
-    let url: String
-}
-
-enum URLType: String, Codable {
-    case comiclink = "comiclink"
-    case detail = "detail"
-    case wiki = "wiki"
+struct Comics: Codable {
+    let available: Int?
+    let collectionURI: String?
 }

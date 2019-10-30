@@ -10,13 +10,13 @@ import UIKit
 
 class ViewController: UITableViewController {
 
-    private let cellId = "cellId"
-    private var sessionProvider: URLSessionProvider!
-    private var dataClass: DataClass?
-    private var results: [Result] = []
-    private let offset: Int = 20
-    private var page: Int = 0
-    private var isDataLoading: Bool = false
+    fileprivate let cellId = "cellId"
+    fileprivate var sessionProvider: URLSessionProvider!
+    fileprivate var dataClass: DataClass?
+    fileprivate var results: [Result] = []
+    fileprivate let offset: Int = 20
+    fileprivate var page: Int = 0
+    fileprivate var isDataLoading: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,7 +80,8 @@ extension ViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! CharacterCell
-        cell.set(text: results[indexPath.row].name)
+        cell.delegate = self
+        cell.set(result: results[indexPath.row])
         
         return cell
     }
@@ -97,6 +98,16 @@ extension ViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailsViewController = DetailsViewController(result: results[indexPath.row])
+//        detailsViewController.updateCharacter = { (id) in
+//            print(id)
+//        }
         navigationController?.pushViewController(detailsViewController, animated: true)
     }
+}
+
+extension ViewController: CharacterCellDelegate {
+    func favoriteButtonPressed(id: Int) {
+        print("ViewController")
+    }
+    
 }
