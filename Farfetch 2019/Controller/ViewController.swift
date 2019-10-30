@@ -10,7 +10,6 @@ import UIKit
 
 class ViewController: UITableViewController {
 
-    fileprivate let cellId = "cellId"
     fileprivate var sessionProvider: URLSessionProvider!
     fileprivate var dataClass: DataClass?
     fileprivate var results: [Result] = []
@@ -27,7 +26,7 @@ class ViewController: UITableViewController {
     
     fileprivate func setupTableView() {
         tableView.alpha = 0.0
-        tableView.register(CharacterCell.self, forCellReuseIdentifier: cellId)
+        tableView.register(CharacterCell.self)
         self.tableView.tableFooterView = UIView(frame: .zero)
         
         let spinner = UIActivityIndicatorView(style: .gray)
@@ -79,7 +78,7 @@ extension ViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! CharacterCell
+        let cell = tableView.dequeue(CharacterCell.self, for: indexPath)!
         cell.delegate = self
         cell.set(result: results[indexPath.row])
         

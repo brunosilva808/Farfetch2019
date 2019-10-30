@@ -15,6 +15,8 @@
 		15FCEB842369C40C00023ADD /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FCEB7E2369C40C00023ADD /* CharacterCell.swift */; };
 		15FCEB862369C40C00023ADD /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FCEB812369C40C00023ADD /* BaseCell.swift */; };
 		15FCEB882369C42700023ADD /* ContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FCEB872369C42700023ADD /* ContainerCell.swift */; };
+		15FCEB8A2369D54200023ADD /* UICollectionView+Dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FCEB892369D54200023ADD /* UICollectionView+Dequeue.swift */; };
+		15FCEB8C2369D92700023ADD /* UITableView+Dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FCEB8B2369D92700023ADD /* UITableView+Dequeue.swift */; };
 		15FDFEDF23671C3500A5739B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FDFEDE23671C3500A5739B /* AppDelegate.swift */; };
 		15FDFEE123671C3500A5739B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FDFEE023671C3500A5739B /* ViewController.swift */; };
 		15FDFEE623671C3800A5739B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15FDFEE523671C3800A5739B /* Assets.xcassets */; };
@@ -65,6 +67,8 @@
 		15FCEB7E2369C40C00023ADD /* CharacterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		15FCEB812369C40C00023ADD /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		15FCEB872369C42700023ADD /* ContainerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerCell.swift; sourceTree = "<group>"; };
+		15FCEB892369D54200023ADD /* UICollectionView+Dequeue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Dequeue.swift"; sourceTree = "<group>"; };
+		15FCEB8B2369D92700023ADD /* UITableView+Dequeue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Dequeue.swift"; sourceTree = "<group>"; };
 		15FDFEDB23671C3500A5739B /* Farfetch 2019.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Farfetch 2019.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		15FDFEDE23671C3500A5739B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15FDFEE023671C3500A5739B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -323,6 +327,8 @@
 		15FDFF3723676AFC00A5739B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				15FCEB892369D54200023ADD /* UICollectionView+Dequeue.swift */,
+				15FCEB8B2369D92700023ADD /* UITableView+Dequeue.swift */,
 				15FDFF3423676AE600A5739B /* UIView+Constraints.swift */,
 			);
 			path = Extensions;
@@ -478,12 +484,14 @@
 				15FDFF3523676AE600A5739B /* UIView+Constraints.swift in Sources */,
 				15092EC22367A01E00659DDC /* StaticTableController.swift in Sources */,
 				15FCEB842369C40C00023ADD /* CharacterCell.swift in Sources */,
+				15FCEB8C2369D92700023ADD /* UITableView+Dequeue.swift in Sources */,
 				15FDFF2C2367229200A5739B /* md5.swift in Sources */,
 				15FDFF2223671E0100A5739B /* NetworkError.swift in Sources */,
 				15FDFF2423671E0100A5739B /* URLComponentsExtension.swift in Sources */,
 				15092EBE23679CA200659DDC /* ModelPresenterCell.swift in Sources */,
 				15FDFF2823671E0100A5739B /* ProviderProtocol.swift in Sources */,
 				15FDFF2923671E0100A5739B /* MarvelService.swift in Sources */,
+				15FCEB8A2369D54200023ADD /* UICollectionView+Dequeue.swift in Sources */,
 				15FDFF2F2367492400A5739B /* Response.swift in Sources */,
 				15FDFF1F23671E0100A5739B /* NetworkResponse.swift in Sources */,
 				15FDFF1E23671E0100A5739B /* ParametersEncoding.swift in Sources */,

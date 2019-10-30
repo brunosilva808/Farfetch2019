@@ -10,7 +10,6 @@ import UIKit
 
 class ContainerCell: BaseCell, ModelPresenterCell {
 
-    fileprivate let cellId = "cellId"
     fileprivate var labelTitle: UILabel!
     fileprivate var collectionView: UICollectionView!
     fileprivate var comicCells: [ComicCell] = []
@@ -28,7 +27,7 @@ class ContainerCell: BaseCell, ModelPresenterCell {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        collectionView.register(ComicCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(ComicCell.self)
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
     }
     
@@ -46,7 +45,7 @@ class ContainerCell: BaseCell, ModelPresenterCell {
         self.model = comics
         self.labelTitle.text = title
         
-        for i in 0...min(2, comics.count - 1) {
+        for i in 0 ..< min(3, comics.count) {
             if let model = self.model?[i] {
                 let comicCell = ComicCell()
                 comicCell.set(model: model)
@@ -63,7 +62,8 @@ extension ContainerCell: UICollectionViewDelegate, UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ComicCell
+        let cell = collectionView.dequeue(ComicCell.self, for: indexPath)!
+
         if let model = model?[indexPath.row] {
             cell.set(model: model)
         }

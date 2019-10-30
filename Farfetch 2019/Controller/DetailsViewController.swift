@@ -10,7 +10,6 @@ import UIKit
 
 class DetailsViewController: StaticTableController {
 
-    fileprivate let cellId = "cellId"
     fileprivate var result: Result!
     fileprivate lazy var characterCell: CharacterCell = CharacterCell()
     fileprivate lazy var comicsCell: ContainerCell = ContainerCell()
@@ -63,7 +62,9 @@ class DetailsViewController: StaticTableController {
                     DispatchQueue.main.async {
                         if let results = response.data?.results {
                             self?.comicsCell.set(title: "Comic", comics: results)
-                            self?.cells.append((self?.comicsCell)!)
+                            if let cell = self?.comicsCell {
+                                self?.cells.append(cell)
+                            }
                         }
                     }
                 case let .failure(error):
@@ -111,7 +112,9 @@ class DetailsViewController: StaticTableController {
                     DispatchQueue.main.async {
                         if let results = response.data?.results {
                             self?.eventsCell.set(title: "Events", comics: results)
-                            self?.cells.append((self?.eventsCell)!)
+                            if let cell = self?.eventsCell {
+                                self?.cells.append(cell)
+                            }
                         }
                     }
                 case let .failure(error):
@@ -134,7 +137,9 @@ class DetailsViewController: StaticTableController {
                     DispatchQueue.main.async {
                         if let results = response.data?.results {
                             self?.seriesCell.set(title: "Series", comics: results)
-                            self?.cells.append((self?.seriesCell)!)
+                            if let cell = self?.seriesCell {
+                                self?.cells.append(cell)
+                            }
                         }
                     }
                 case let .failure(error):
@@ -149,7 +154,7 @@ class DetailsViewController: StaticTableController {
     
     fileprivate func setupTableViewAndCells() {
         
-        tableView.register(CharacterCell.self, forCellReuseIdentifier: cellId)
+        tableView.register(CharacterCell.self)
         
         characterCell.set(result: result)
         cells.append(characterCell)
