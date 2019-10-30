@@ -9,7 +9,7 @@
 import UIKit
 
 protocol CharacterCellDelegate: class {
-    func favoriteButtonPressed(id: Int)
+    func favoriteButtonPressed()
 }
 
 class CharacterCell: BaseCell, ModelPresenterCell {
@@ -22,6 +22,9 @@ class CharacterCell: BaseCell, ModelPresenterCell {
             }
             
             labelName.text = model.name
+            if model.id == UserDefaults.Character.getInt(key: .favorite) {
+                buttonFavorites.isSelected = true
+            }
         }
     }
     weak var delegate: CharacterCellDelegate?
@@ -49,9 +52,19 @@ class CharacterCell: BaseCell, ModelPresenterCell {
     }
     
     @objc fileprivate func favouriteButtonPressed() {
-        buttonFavorites.isSelected = !buttonFavorites.isSelected
-        if let id = model?.id {
-            delegate?.favoriteButtonPressed(id: id)
+        
+        guard let model = self.model else {
+            return
         }
+        
+        buttonFavorites.isSelected = !buttonFavorites.isSelected
+        
+        if buttonFavorites.isSelected {
+            UserDefaults.Character.setInt(model.id, key: .favorite)
+        } else {
+            UserDefaults.Character.removeInt(key: .favorite)
+        }
+        
+        delegate?.favoriteButtonPressed()
     }
 }

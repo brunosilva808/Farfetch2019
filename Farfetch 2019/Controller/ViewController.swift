@@ -65,8 +65,8 @@ class ViewController: UITableViewController {
                         self?.tableView.reloadData()
                     }
                 }
-            case let .failure(error):
-                print(error)
+            case .failure(_):
+                break
             }
         }) { [weak self] in
             DispatchQueue.main.async { [weak self] in
@@ -126,6 +126,7 @@ extension ViewController {
         }
 
         let detailsViewController = DetailsViewController(result: result)
+        detailsViewController
 //        detailsViewController.updateCharacter = { (id) in
 //            print(id)
 //        }
@@ -134,10 +135,11 @@ extension ViewController {
 }
 
 extension ViewController: CharacterCellDelegate {
-    func favoriteButtonPressed(id: Int) {
-        print("ViewController")
+    func favoriteButtonPressed() {
+        print("xpto")
+        tableView.reloadData()
     }
-    
+
 }
 
 extension ViewController: UISearchResultsUpdating {

@@ -67,8 +67,8 @@ class DetailsViewController: StaticTableController {
                             }
                         }
                     }
-                case let .failure(error):
-                    print(error)
+                case .failure(_):
+                    break
                 }
             }) { [weak self] in
                 self?.dispatchGroup.leave()
@@ -92,8 +92,8 @@ class DetailsViewController: StaticTableController {
                             }
                         }
                     }
-                case let .failure(error):
-                    print(error)
+                case .failure(_):
+                    break
                 }
             }) { [weak self] in
                 self?.dispatchGroup.leave()
@@ -142,8 +142,8 @@ class DetailsViewController: StaticTableController {
                             }
                         }
                     }
-                case let .failure(error):
-                    print(error)
+                case .failure(_):
+                    break
                 }
             }) { [weak self] in
                 self?.dispatchGroup.leave()

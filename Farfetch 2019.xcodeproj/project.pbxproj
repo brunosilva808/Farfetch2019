@@ -18,6 +18,7 @@
 		15FCEB8A2369D54200023ADD /* UICollectionView+Dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FCEB892369D54200023ADD /* UICollectionView+Dequeue.swift */; };
 		15FCEB8C2369D92700023ADD /* UITableView+Dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FCEB8B2369D92700023ADD /* UITableView+Dequeue.swift */; };
 		15FCEB8E2369EA7100023ADD /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FCEB8D2369EA7100023ADD /* ReusableView.swift */; };
+		15FCEB912369FBC400023ADD /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FCEB902369FBC400023ADD /* UserDefaults.swift */; };
 		15FDFEDF23671C3500A5739B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FDFEDE23671C3500A5739B /* AppDelegate.swift */; };
 		15FDFEE123671C3500A5739B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FDFEE023671C3500A5739B /* ViewController.swift */; };
 		15FDFEE623671C3800A5739B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15FDFEE523671C3800A5739B /* Assets.xcassets */; };
@@ -71,6 +72,7 @@
 		15FCEB892369D54200023ADD /* UICollectionView+Dequeue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Dequeue.swift"; sourceTree = "<group>"; };
 		15FCEB8B2369D92700023ADD /* UITableView+Dequeue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Dequeue.swift"; sourceTree = "<group>"; };
 		15FCEB8D2369EA7100023ADD /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		15FCEB902369FBC400023ADD /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		15FDFEDB23671C3500A5739B /* Farfetch 2019.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Farfetch 2019.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		15FDFEDE23671C3500A5739B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15FDFEE023671C3500A5739B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -168,10 +170,18 @@
 			path = BaseCell;
 			sourceTree = "<group>";
 		};
+		15FCEB8F2369FB4F00023ADD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				15FDFF3623676AF500A5739B /* Utils */,
+				15FDFF3723676AFC00A5739B /* Extensions */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		15FDFED223671C3500A5739B = {
 			isa = PBXGroup;
 			children = (
-				15092EC92368A0F700659DDC /* Default-568h@2x.png */,
 				15FDFEDD23671C3500A5739B /* Farfetch 2019 */,
 				15FDFEF223671C3800A5739B /* Farfetch 2019Tests */,
 				15FDFEFD23671C3800A5739B /* Farfetch 2019UITests */,
@@ -197,7 +207,7 @@
 				15FDFF3323676A0B00A5739B /* View */,
 				15FDFF3823676FEA00A5739B /* Controller */,
 				15FDFF0C23671E0100A5739B /* Networking */,
-				15FDFF3623676AF500A5739B /* Utils */,
+				15FCEB8F2369FB4F00023ADD /* Helpers */,
 				15FDFF2A23671E2200A5739B /* Resources */,
 			);
 			path = "Farfetch 2019";
@@ -284,6 +294,7 @@
 		15FDFF2A23671E2200A5739B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				15092EC92368A0F700659DDC /* Default-568h@2x.png */,
 				15FDFEE523671C3800A5739B /* Assets.xcassets */,
 				15FDFEE723671C3800A5739B /* LaunchScreen.storyboard */,
 				15FDFEEA23671C3800A5739B /* Info.plist */,
@@ -321,7 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				15092EC723687B7A00659DDC /* CustomImageView.swift */,
-				15FDFF3723676AFC00A5739B /* Extensions */,
+				15FCEB902369FBC400023ADD /* UserDefaults.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -497,6 +508,7 @@
 				15FCEB8A2369D54200023ADD /* UICollectionView+Dequeue.swift in Sources */,
 				15FDFF2F2367492400A5739B /* Response.swift in Sources */,
 				15FDFF1F23671E0100A5739B /* NetworkResponse.swift in Sources */,
+				15FCEB912369FBC400023ADD /* UserDefaults.swift in Sources */,
 				15FCEB8E2369EA7100023ADD /* ReusableView.swift in Sources */,
 				15FDFF1E23671E0100A5739B /* ParametersEncoding.swift in Sources */,
 				15FDFF2023671E0100A5739B /* HTTPMethod.swift in Sources */,
