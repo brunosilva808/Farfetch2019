@@ -11,11 +11,11 @@ import UIKit
 class ViewController: UITableViewController {
 
     fileprivate var sessionProvider: URLSessionProvider!
-    fileprivate var dataClass: DataClass?
-    fileprivate var results: [Result] = []
+    fileprivate lazy var results: [Result] = []
+    fileprivate lazy var total: Int = 0
+    fileprivate lazy var page: Int = 0
+    fileprivate lazy var isDataLoading: Bool = false
     fileprivate let offset: Int = 20
-    fileprivate var page: Int = 0
-    fileprivate var isDataLoading: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +47,7 @@ class ViewController: UITableViewController {
                 DispatchQueue.main.async {
                     if let results = response.data?.results {
                         self?.page += 1
-                        self?.dataClass = response.data
+                        self?.total = response.data?.total ?? 0
                         self?.results.append(contentsOf: results)
                         self?.tableView.alpha = 1.0
                         self?.tableView.reloadData()
@@ -78,16 +78,15 @@ extension ViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(CharacterCell.self, for: indexPath)!
+        let cell = tableView.reusableCell(for: indexPath, with: results[indexPath.row]) as CharacterCell
         cell.delegate = self
-        cell.set(result: results[indexPath.row])
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == results.count - 2 &&
-            dataClass?.total != results.count &&
+            total != results.count &&
             isDataLoading == false {
             isDataLoading = true
             getCharacters(offset: offset * page)

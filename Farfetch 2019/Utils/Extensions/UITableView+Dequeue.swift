@@ -10,15 +10,20 @@ import UIKit
 
 protocol TableViewType {
     func register<T: UITableViewCell>(_ cellClass: T.Type)
-    func dequeue<T: UITableViewCell>(_ cellClass: T.Type, for indexPath: IndexPath) -> T?
 }
 
+extension UITableViewCell: ReusableView { }
 extension UITableView: TableViewType {
     func register<T: UITableViewCell>(_ cellClass: T.Type) {
-        register(cellClass, forCellReuseIdentifier: String(describing: cellClass))
+        register(cellClass, forCellReuseIdentifier: cellClass.reuseIdentifier)
     }
-    
-    func dequeue<T: AnyObject>(_ cellClass: T.Type, for indexPath: IndexPath) -> T? {
-        return dequeueReusableCell(withIdentifier: String(describing: cellClass), for: indexPath) as? T
+}
+
+extension UITableView {
+    func reusableCell<T: UITableViewCell>(for indexPath: IndexPath, with model: T.Model) -> T where T: ModelPresenterCell {
+        
+        var cell = self.dequeueReusableCell(withIdentifier: T.reuseIdentifier, for: indexPath) as! T
+        cell.model = model
+        return cell
     }
 }

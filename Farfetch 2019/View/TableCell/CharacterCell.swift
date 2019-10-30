@@ -15,14 +15,17 @@ protocol CharacterCellDelegate: class {
 class CharacterCell: BaseCell, ModelPresenterCell {
     fileprivate var labelName: UILabel!
     fileprivate var buttonFavorites: UIButton!
-    internal var model: Result?
-    weak var delegate: CharacterCellDelegate?
-    
-    func set(result: Result) {
-        self.model = result
-        labelName.text = result.name
+    internal var model: Result? {
+        didSet {
+            guard let model = self.model else {
+                return
+            }
+            
+            labelName.text = model.name
+        }
     }
-    
+    weak var delegate: CharacterCellDelegate?
+
     internal override func setupUI() {
         labelName = UILabel()
         labelName.textAlignment = .left

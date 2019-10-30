@@ -44,7 +44,6 @@ class ComicCell: UICollectionViewCell, ModelPresenterCell {
     func setupUI() {
         imageView = CustomImageView()
         imageView.image = UIImage(named: "portrait_medium")
-        imageView.backgroundColor = .black
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         

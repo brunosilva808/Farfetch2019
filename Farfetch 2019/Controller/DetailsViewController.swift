@@ -156,7 +156,7 @@ class DetailsViewController: StaticTableController {
         
         tableView.register(CharacterCell.self)
         
-        characterCell.set(result: result)
+        characterCell.model = result
         cells.append(characterCell)
     }
     
