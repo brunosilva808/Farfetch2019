@@ -18,7 +18,6 @@ class ComicCell: UICollectionViewCell, ModelPresenterCell {
     override init(frame: CGRect) {
         super.init(frame: .zero)
         
-        self.backgroundColor = .purple
         setupUI()
         setupView()
     }
@@ -54,7 +53,6 @@ class ComicCell: UICollectionViewCell, ModelPresenterCell {
         labelTitle.translatesAutoresizingMaskIntoConstraints = false
         
         labelIssueNumber = UILabel()
-        labelIssueNumber.backgroundColor = .green
         labelIssueNumber.font = UIFont.systemFont(ofSize: 11)
         labelIssueNumber.textColor = .gray
         labelIssueNumber.translatesAutoresizingMaskIntoConstraints = false

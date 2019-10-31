@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol CharacterCellDelegate: class {
-    func favoriteButtonPressed()
-}
-
 class CharacterCell: BaseCell, ModelPresenterCell {
     fileprivate var labelName: UILabel!
     fileprivate var buttonFavorites: UIButton!
@@ -24,10 +20,12 @@ class CharacterCell: BaseCell, ModelPresenterCell {
             labelName.text = model.name
             if model.id == UserDefaults.Character.getInt(key: .favorite) {
                 buttonFavorites.isSelected = true
+            } else {
+                buttonFavorites.isSelected = false
             }
         }
     }
-    weak var delegate: CharacterCellDelegate?
+    var onFavoriteCallback: SimpleCallBack?
 
     internal override func setupUI() {
         labelName = UILabel()
@@ -65,6 +63,6 @@ class CharacterCell: BaseCell, ModelPresenterCell {
             UserDefaults.Character.removeInt(key: .favorite)
         }
         
-        delegate?.favoriteButtonPressed()
+        onFavoriteCallback?()
     }
 }

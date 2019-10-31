@@ -7,8 +7,6 @@
 
 import Foundation
 
-typealias SimpleCallback = () -> ()
-
 final class URLSessionProvider: ProviderProtocol {
 
     private var session: URLSessionProtocol
