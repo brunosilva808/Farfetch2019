@@ -95,6 +95,20 @@ class ViewController: UITableViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    fileprivate func showDetailsViewController(_ indexPath: IndexPath) {
+        var result: Result!
+        self.indexPath = indexPath
+        if isFiltering() {
+            result = filterResults[indexPath.row]
+        } else {
+            result = results[indexPath.row]
+        }
+        
+        let detailsViewController = DetailsViewController(result: result)
+        detailsViewController.transitioningDelegate = self
+        present(detailsViewController, animated: true, completion: nil)
+    }
+    
     deinit {
         sessionProvider.cancelTask()
         sessionProvider = nil
@@ -139,18 +153,7 @@ extension ViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var result: Result!
-        self.indexPath = indexPath
-        if isFiltering() {
-            result = filterResults[indexPath.row]
-        } else {
-            result = results[indexPath.row]
-        }
-
-        let detailsViewController = DetailsViewController(result: result)
-        detailsViewController.transitioningDelegate = self
-        detailsViewController.transitioningDelegate = self
-        present(detailsViewController, animated: true, completion: nil)
+        showDetailsViewController(indexPath)
     }
 }
 

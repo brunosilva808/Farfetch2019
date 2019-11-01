@@ -10,7 +10,6 @@
 		15092EBE23679CA200659DDC /* ModelPresenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15092EBD23679CA200659DDC /* ModelPresenterCell.swift */; };
 		15092EC22367A01E00659DDC /* StaticTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15092EC12367A01D00659DDC /* StaticTableController.swift */; };
 		15092EC823687B7A00659DDC /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15092EC723687B7A00659DDC /* CustomImageView.swift */; };
-		15092ECA2368A0F700659DDC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15092EC92368A0F700659DDC /* Default-568h@2x.png */; };
 		151B4F89236B090800D27AC4 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151B4F88236B090800D27AC4 /* Global.swift */; };
 		151B4F8B236CB6F200D27AC4 /* Delegated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151B4F8A236CB6F200D27AC4 /* Delegated.swift */; };
 		151B4F8D236CB9E000D27AC4 /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151B4F8C236CB9E000D27AC4 /* PopAnimator.swift */; };
@@ -67,7 +66,6 @@
 		15092EBD23679CA200659DDC /* ModelPresenterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPresenterCell.swift; sourceTree = "<group>"; };
 		15092EC12367A01D00659DDC /* StaticTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticTableController.swift; sourceTree = "<group>"; };
 		15092EC723687B7A00659DDC /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
-		15092EC92368A0F700659DDC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		151B4F88236B090800D27AC4 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		151B4F8A236CB6F200D27AC4 /* Delegated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegated.swift; sourceTree = "<group>"; };
 		151B4F8C236CB9E000D27AC4 /* PopAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
@@ -300,7 +298,6 @@
 		15FDFF2A23671E2200A5739B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				15092EC92368A0F700659DDC /* Default-568h@2x.png */,
 				15FDFEE523671C3800A5739B /* Assets.xcassets */,
 				15FDFEE723671C3800A5739B /* LaunchScreen.storyboard */,
 				15FDFEEA23671C3800A5739B /* Info.plist */,
@@ -473,7 +470,6 @@
 			files = (
 				15FDFEE923671C3800A5739B /* LaunchScreen.storyboard in Resources */,
 				15FDFEE623671C3800A5739B /* Assets.xcassets in Resources */,
-				15092ECA2368A0F700659DDC /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

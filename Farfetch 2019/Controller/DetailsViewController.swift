@@ -18,11 +18,11 @@ class DetailsViewController: StaticTableController {
     fileprivate lazy var seriesCell: ContainerCell = ContainerCell()
     fileprivate var dispatchGroup: DispatchGroup!
     fileprivate var sessionProvider: URLSessionProvider!
-//    var updateCharacter: ((String) -> Void)?
     
     init(result: Result) {
-        self.result = result
         super.init(nibName: nil, bundle: nil)
+        
+        self.result = result
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -32,7 +32,7 @@ class DetailsViewController: StaticTableController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-            setupGestureRecognizer()
+        setupGestureRecognizer()
         setupAPICalls()
         setupTableViewAndCells()
     }
