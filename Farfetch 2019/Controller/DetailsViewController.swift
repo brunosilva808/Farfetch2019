@@ -32,8 +32,18 @@ class DetailsViewController: StaticTableController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+            setupGestureRecognizer()
         setupAPICalls()
         setupTableViewAndCells()
+    }
+    
+    fileprivate func setupGestureRecognizer() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func handleTap() {
+        self.dismiss(animated: true, completion: nil)
     }
     
     fileprivate func setupAPICalls() {

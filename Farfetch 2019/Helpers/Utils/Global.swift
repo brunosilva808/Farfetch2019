@@ -8,4 +8,4 @@
 
 import Foundation
 
-typealias SimpleCallback = () -> (Void)
+typealias SimpleCallback = () -> Void

@@ -16,6 +16,8 @@ class ViewController: UITableViewController {
     fileprivate lazy var total: Int = 0
     fileprivate lazy var page: Int = 0
     fileprivate lazy var isDataLoading: Bool = false
+    fileprivate let transition = PopAnimator()
+    fileprivate var indexPath: IndexPath!
     fileprivate let offset: Int = 20
     fileprivate lazy var oldFavorite: Int = UserDefaults.Character.getInt(key: .favorite)
     fileprivate lazy var searchController: UISearchController = UISearchController(searchResultsController: nil)
@@ -45,7 +47,6 @@ class ViewController: UITableViewController {
     fileprivate func setupTableView() {
         tableView.alpha = 0.0
         tableView.register(CharacterCell.self)
-        tableView.register(UITableViewCell.self)
         tableView.tableFooterView = UIView(frame: .zero)
         
         let spinner = UIActivityIndicatorView(style: .gray)
@@ -90,6 +91,10 @@ class ViewController: UITableViewController {
         }
     }
     
+    @objc func handleTap() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     deinit {
         sessionProvider.cancelTask()
         sessionProvider = nil
@@ -115,8 +120,10 @@ extension ViewController {
         } else {
             cell = tableView.reusableCell(for: indexPath, with: results[indexPath.row]) as CharacterCell
         }
-        
-        cell.onFavoriteCallback = { [weak self] in self?.updateFavorite() }
+
+        cell.onFavoriteCallback.delegate(delegate: self) { (self) in
+            self.updateFavorite()
+        }
         
         return cell
     }
@@ -133,6 +140,7 @@ extension ViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var result: Result!
+        self.indexPath = indexPath
         if isFiltering() {
             result = filterResults[indexPath.row]
         } else {
@@ -140,7 +148,9 @@ extension ViewController {
         }
 
         let detailsViewController = DetailsViewController(result: result)
-        navigationController?.pushViewController(detailsViewController, animated: true)
+        detailsViewController.transitioningDelegate = self
+        detailsViewController.transitioningDelegate = self
+        present(detailsViewController, animated: true, completion: nil)
     }
 }
 
@@ -175,4 +185,26 @@ extension ViewController {
     fileprivate func isFiltering() -> Bool {
         return searchController.isActive && !self.searchBarIsEmpty()
     }
+}
+
+// MARK: Animation Transition
+extension ViewController: UIViewControllerTransitioningDelegate {
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        let rectOfCellInTableView = tableView.rectForRow(at: self.indexPath)
+        let rectOfCellInSuperview = tableView.convert(rectOfCellInTableView, to: tableView.superview)
+        
+        transition.presenting = true
+        transition.originFrame = rectOfCellInSuperview
+        
+        return transition
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.presenting = false
+        return transition
+        
+    }
+    
 }

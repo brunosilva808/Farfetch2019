@@ -25,7 +25,7 @@ class CharacterCell: BaseCell, ModelPresenterCell {
             }
         }
     }
-    var onFavoriteCallback: SimpleCallBack?
+    var onFavoriteCallback = Delegated()
 
     internal override func setupUI() {
         labelName = UILabel()
@@ -63,6 +63,6 @@ class CharacterCell: BaseCell, ModelPresenterCell {
             UserDefaults.Character.removeInt(key: .favorite)
         }
         
-        onFavoriteCallback?()
+        onFavoriteCallback.callback?()
     }
 }
