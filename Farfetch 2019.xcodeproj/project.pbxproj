@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1502E0CF236DF88300D06CE2 /* ModelPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1502E0CE236DF88300D06CE2 /* ModelPresenterTests.swift */; };
+		1502E0D2236E2EC800D06CE2 /* JSONMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1502E0D0236E2EC800D06CE2 /* JSONMock.swift */; };
+		1502E0D3236E2EC800D06CE2 /* NetworkingMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1502E0D1236E2EC800D06CE2 /* NetworkingMock.swift */; };
+		1502E0D5236E324900D06CE2 /* MarvelAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1502E0D4236E324900D06CE2 /* MarvelAPITests.swift */; };
+		1502E0D7236E5C7300D06CE2 /* characters.json in Resources */ = {isa = PBXBuildFile; fileRef = 1502E0D6236E5C7300D06CE2 /* characters.json */; };
 		15092EBE23679CA200659DDC /* ModelPresenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15092EBD23679CA200659DDC /* ModelPresenterCell.swift */; };
 		15092EC22367A01E00659DDC /* StaticTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15092EC12367A01D00659DDC /* StaticTableController.swift */; };
 		15092EC823687B7A00659DDC /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15092EC723687B7A00659DDC /* CustomImageView.swift */; };
@@ -25,7 +30,7 @@
 		15FDFEE123671C3500A5739B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FDFEE023671C3500A5739B /* ViewController.swift */; };
 		15FDFEE623671C3800A5739B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15FDFEE523671C3800A5739B /* Assets.xcassets */; };
 		15FDFEE923671C3800A5739B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15FDFEE723671C3800A5739B /* LaunchScreen.storyboard */; };
-		15FDFEF423671C3800A5739B /* Farfetch_2019Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FDFEF323671C3800A5739B /* Farfetch_2019Tests.swift */; };
+		15FDFEF423671C3800A5739B /* UserDefaultsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FDFEF323671C3800A5739B /* UserDefaultsTests.swift */; };
 		15FDFEFF23671C3800A5739B /* Farfetch_2019UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FDFEFE23671C3800A5739B /* Farfetch_2019UITests.swift */; };
 		15FDFF1E23671E0100A5739B /* ParametersEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FDFF0E23671E0100A5739B /* ParametersEncoding.swift */; };
 		15FDFF1F23671E0100A5739B /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FDFF0F23671E0100A5739B /* NetworkResponse.swift */; };
@@ -63,6 +68,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1502E0CE236DF88300D06CE2 /* ModelPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPresenterTests.swift; sourceTree = "<group>"; };
+		1502E0D0236E2EC800D06CE2 /* JSONMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONMock.swift; sourceTree = "<group>"; };
+		1502E0D1236E2EC800D06CE2 /* NetworkingMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingMock.swift; sourceTree = "<group>"; };
+		1502E0D4236E324900D06CE2 /* MarvelAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAPITests.swift; sourceTree = "<group>"; };
+		1502E0D6236E5C7300D06CE2 /* characters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = characters.json; sourceTree = "<group>"; };
 		15092EBD23679CA200659DDC /* ModelPresenterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPresenterCell.swift; sourceTree = "<group>"; };
 		15092EC12367A01D00659DDC /* StaticTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticTableController.swift; sourceTree = "<group>"; };
 		15092EC723687B7A00659DDC /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
@@ -84,7 +94,7 @@
 		15FDFEE823671C3800A5739B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		15FDFEEA23671C3800A5739B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15FDFEEF23671C3800A5739B /* Farfetch 2019Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Farfetch 2019Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		15FDFEF323671C3800A5739B /* Farfetch_2019Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Farfetch_2019Tests.swift; sourceTree = "<group>"; };
+		15FDFEF323671C3800A5739B /* UserDefaultsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsTests.swift; sourceTree = "<group>"; };
 		15FDFEF523671C3800A5739B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15FDFEFA23671C3800A5739B /* Farfetch 2019UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Farfetch 2019UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		15FDFEFE23671C3800A5739B /* Farfetch_2019UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Farfetch_2019UITests.swift; sourceTree = "<group>"; };
@@ -132,6 +142,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15027E63236CE18F00DA1E48 /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				151B4F8C236CB9E000D27AC4 /* PopAnimator.swift */,
+			);
+			path = Animator;
+			sourceTree = "<group>";
+		};
 		15092EBF23679CA700659DDC /* Enum */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +195,7 @@
 		15FCEB8F2369FB4F00023ADD /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				15027E63236CE18F00DA1E48 /* Animator */,
 				15FDFF3623676AF500A5739B /* Utils */,
 				15FDFF3723676AFC00A5739B /* Extensions */,
 			);
@@ -220,7 +239,12 @@
 		15FDFEF223671C3800A5739B /* Farfetch 2019Tests */ = {
 			isa = PBXGroup;
 			children = (
-				15FDFEF323671C3800A5739B /* Farfetch_2019Tests.swift */,
+				15FDFEF323671C3800A5739B /* UserDefaultsTests.swift */,
+				1502E0CE236DF88300D06CE2 /* ModelPresenterTests.swift */,
+				1502E0D4236E324900D06CE2 /* MarvelAPITests.swift */,
+				1502E0D0236E2EC800D06CE2 /* JSONMock.swift */,
+				1502E0D1236E2EC800D06CE2 /* NetworkingMock.swift */,
+				1502E0D6236E5C7300D06CE2 /* characters.json */,
 				15FDFEF523671C3800A5739B /* Info.plist */,
 			);
 			path = "Farfetch 2019Tests";
@@ -334,7 +358,6 @@
 		15FDFF3623676AF500A5739B /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				151B4F8C236CB9E000D27AC4 /* PopAnimator.swift */,
 				15092EC723687B7A00659DDC /* CustomImageView.swift */,
 				15FCEB902369FBC400023ADD /* UserDefaults.swift */,
 				151B4F88236B090800D27AC4 /* Global.swift */,
@@ -477,6 +500,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1502E0D7236E5C7300D06CE2 /* characters.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,7 +557,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15FDFEF423671C3800A5739B /* Farfetch_2019Tests.swift in Sources */,
+				1502E0CF236DF88300D06CE2 /* ModelPresenterTests.swift in Sources */,
+				1502E0D3236E2EC800D06CE2 /* NetworkingMock.swift in Sources */,
+				15FDFEF423671C3800A5739B /* UserDefaultsTests.swift in Sources */,
+				1502E0D2236E2EC800D06CE2 /* JSONMock.swift in Sources */,
+				1502E0D5236E324900D06CE2 /* MarvelAPITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

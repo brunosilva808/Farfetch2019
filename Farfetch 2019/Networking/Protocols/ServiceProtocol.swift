@@ -35,9 +35,16 @@ extension ServiceProtocol {
     }
     
     var commonQueryItems: [URLQueryItem] {
-        let timestamp = "\(Date().timeIntervalSince1970)"
-        let hash = "\(timestamp)\(privateKey)\(publicKey)".md5
-        
+        var timestamp: String = ""
+        var hash: String = ""
+        if let _ = NSClassFromString("XCTest") {
+            hash = ""
+            timestamp = ""
+        } else {
+            timestamp = "\(Date().timeIntervalSince1970)"
+            hash = "\(timestamp)\(privateKey)\(publicKey)".md5
+        }
+
         return [
             URLQueryItem(name: "ts", value: timestamp),
             URLQueryItem(name: "hash", value: hash),

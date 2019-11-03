@@ -18,7 +18,11 @@ class ViewController: UITableViewController {
     fileprivate lazy var isDataLoading: Bool = false
     fileprivate let transition = PopAnimator()
     fileprivate var indexPath: IndexPath!
-    fileprivate let offset: Int = 20
+    fileprivate var offset: Int {
+        get {
+            return 20 * page
+        }
+    }
     fileprivate lazy var oldFavorite: Int = UserDefaults.Character.getInt(key: .favorite)
     fileprivate lazy var searchController: UISearchController = UISearchController(searchResultsController: nil)
     
@@ -27,7 +31,7 @@ class ViewController: UITableViewController {
         
         setupTableView()
         setupSearchController()
-        getCharacters(offset: offset * page)
+        getCharacters()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,7 +67,7 @@ class ViewController: UITableViewController {
         }
     }
     
-    fileprivate func getCharacters(offset: Int) {
+    fileprivate func getCharacters() {
 
         sessionProvider = URLSessionProvider()
         sessionProvider.request(type: Response.self,
@@ -78,6 +82,15 @@ class ViewController: UITableViewController {
                         self?.results.append(contentsOf: results)
                         self?.tableView.alpha = 1.0
                         self?.tableView.reloadData()
+                        
+                        let jsonEncoder = JSONEncoder()
+                        do {
+                            let jsonData = try jsonEncoder.encode(response.data!)
+                            let jsonString = String(data: jsonData, encoding: .utf8)
+                            print(jsonString!)
+                        }
+                        catch {
+                        }
                     }
                 }
             case .failure(_):
@@ -143,11 +156,11 @@ extension ViewController {
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == results.count - 2 &&
-            total != results.count &&
-            isDataLoading == false {
+        if indexPath.row == results.count - 2
+            && total != results.count
+            && isDataLoading == false {
             isDataLoading = true
-            getCharacters(offset: offset * page)
+            getCharacters()
             tableView.tableFooterView?.isHidden = false
         }
     }
