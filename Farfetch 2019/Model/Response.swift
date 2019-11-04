@@ -47,39 +47,39 @@ struct Thumbnail: Codable {
     }
     
     enum Portrait {
-        case small
+//        case small
         case medium
-        case xlarge
-        case fantastic
-        case uncanny
-        case incredible
-        case Void()
+//        case xlarge
+//        case fantastic
+//        case uncanny
+//        case incredible
+//        case Void()
     }
     
     func getImageUrl(size: Portrait) -> String {
         var urlString = self.path
         
         switch size {
-        case .small:
-            urlString += "/portrait_small"
-            break
+//        case .small:
+//            urlString += "/portrait_small"
+//            break
         case .medium:
             urlString += "/portrait_medium"
             break
-        case .xlarge:
-            urlString += "/portrait_xlarge"
-            break
-        case .fantastic:
-            urlString += "/portrait_fantastic"
-            break
-        case .uncanny:
-            urlString += "/portrait_uncanny"
-            break
-        case .incredible:
-            urlString += "/portrait_incredible"
-            break
-        default:
-            break
+//        case .xlarge:
+//            urlString += "/portrait_xlarge"
+//            break
+//        case .fantastic:
+//            urlString += "/portrait_fantastic"
+//            break
+//        case .uncanny:
+//            urlString += "/portrait_uncanny"
+//            break
+//        case .incredible:
+//            urlString += "/portrait_incredible"
+//            break
+//        default:
+//            break
         }
         
         urlString += "." + self.thumbnailExtension

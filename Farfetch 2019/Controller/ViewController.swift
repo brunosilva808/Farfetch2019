@@ -82,15 +82,6 @@ class ViewController: UITableViewController {
                         self?.results.append(contentsOf: results)
                         self?.tableView.alpha = 1.0
                         self?.tableView.reloadData()
-                        
-                        let jsonEncoder = JSONEncoder()
-                        do {
-                            let jsonData = try jsonEncoder.encode(response.data!)
-                            let jsonString = String(data: jsonData, encoding: .utf8)
-                            print(jsonString!)
-                        }
-                        catch {
-                        }
                     }
                 }
             case .failure(_):

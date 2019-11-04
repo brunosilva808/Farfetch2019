@@ -8,14 +8,6 @@
 
 import Foundation
 
-//func getURLSessionWithMockConfigurations() -> URLSession {
-//    
-//    let configuration = URLSessionConfiguration.ephemeral
-//    configuration.protocolClasses = [NetworkingMock.self]
-//    let urlSession = URLSession(configuration: configuration)
-//    return urlSession
-//}
-
 class NetworkingMock: URLProtocol {
     private static var stubs = [URL: Stub]()
     private struct Stub {
