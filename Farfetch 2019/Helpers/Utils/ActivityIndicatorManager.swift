@@ -15,7 +15,7 @@ enum ActivityIndicatorAnimation {
 
 class ActivityIndicatorManager: UIView {
     fileprivate weak var activityIndicator: UIActivityIndicatorView!
-    fileprivate weak var tableView: UITableView?
+    fileprivate weak var tableView: UITableView!
     var isAnimating: Bool {
         get {
             if activityIndicator.isAnimating {
@@ -26,13 +26,13 @@ class ActivityIndicatorManager: UIView {
         }
     }
 
-    init(activityIndicator: UIActivityIndicatorView, tableView: UITableView?) {
+    init(activityIndicator: UIActivityIndicatorView, tableView: UITableView) {
         super.init(frame: activityIndicator.frame)
         
         self.activityIndicator = activityIndicator
         self.tableView = tableView
-        self.tableView?.tableFooterView = self.activityIndicator
-        self.tableView?.tableFooterView?.isHidden = true
+        self.tableView.tableFooterView = self.activityIndicator
+        self.tableView.tableFooterView?.isHidden = true
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -43,10 +43,10 @@ class ActivityIndicatorManager: UIView {
         switch activity {
         case .start:
             activityIndicator.startAnimating()
-            tableView?.tableFooterView?.isHidden = false
+            tableView.tableFooterView?.isHidden = false
         case .stop:
             activityIndicator.stopAnimating()
-            tableView?.tableFooterView?.isHidden = true
+            tableView.tableFooterView?.isHidden = true
         }
     }
     
