@@ -171,9 +171,9 @@ class DetailsViewController: StaticTableController {
     }
     
     deinit {
-        sessionProvider.cancelTask()
         sessionProvider = nil
         dispatchGroup = nil
+        result = nil
     }
 
 }

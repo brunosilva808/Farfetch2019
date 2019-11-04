@@ -15,8 +15,9 @@ class ViewController: UITableViewController {
     fileprivate lazy var filterResults = [Result]()
     fileprivate lazy var total: Int = 0
     fileprivate lazy var page: Int = 0
-    fileprivate lazy var isDataLoading: Bool = false
-    fileprivate let transition = PopAnimator()
+    fileprivate lazy var activityIndicator = UIActivityIndicatorView(style: .gray)
+    fileprivate var activityIndicatorManager: ActivityIndicatorManager!
+    fileprivate lazy var transition = PopAnimator()
     fileprivate var indexPath: IndexPath!
     fileprivate var offset: Int {
         get {
@@ -29,7 +30,7 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupTableView()
+        setupTableViewAndActivityIndicator()
         setupSearchController()
         getCharacters()
     }
@@ -37,6 +38,7 @@ class ViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        tableView.tableFooterView?.isHidden = true
         updateFavorite()
     }
     
@@ -48,16 +50,12 @@ class ViewController: UITableViewController {
         definesPresentationContext = true
     }
     
-    fileprivate func setupTableView() {
+    fileprivate func setupTableViewAndActivityIndicator() {
         tableView.alpha = 0.0
         tableView.register(CharacterCell.self)
         tableView.tableFooterView = UIView(frame: .zero)
         
-        let spinner = UIActivityIndicatorView(style: .gray)
-        spinner.startAnimating()
-        spinner.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 44)
-        tableView.tableFooterView = spinner
-        tableView.tableFooterView?.isHidden = true
+        activityIndicatorManager = ActivityIndicatorManager(activityIndicator: activityIndicator, tableView: tableView)
     }
     
     fileprivate func updateFavorite() {
@@ -89,8 +87,7 @@ class ViewController: UITableViewController {
             }
         }) { [weak self] in
             DispatchQueue.main.async { [weak self] in
-                self?.isDataLoading = false
-                self?.tableView.tableFooterView?.isHidden = true
+                self?.activityIndicatorManager.setAnimation(.stop)
             }
         }
     }
@@ -114,8 +111,10 @@ class ViewController: UITableViewController {
     }
     
     deinit {
-        sessionProvider.cancelTask()
         sessionProvider = nil
+        activityIndicatorManager = nil
+        results = []
+        filterResults = []
     }
 
 }
@@ -150,10 +149,10 @@ extension ViewController {
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == results.count - 2
             && total != results.count
-            && isDataLoading == false {
-            isDataLoading = true
+            && activityIndicatorManager.isAnimating == false {
+            
             getCharacters()
-            tableView.tableFooterView?.isHidden = false
+            activityIndicatorManager.setAnimation(.start)
         }
     }
     

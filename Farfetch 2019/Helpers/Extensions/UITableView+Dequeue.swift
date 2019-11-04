@@ -10,7 +10,7 @@ import UIKit
 
 protocol TableViewType {
     func register<T: UITableViewCell>(_ cellClass: T.Type)
-    func dequeue<T: UITableViewCell>(_ cellClass: T.Type, for indexPath: IndexPath) -> T?
+//    func dequeue<T: UITableViewCell>(_ cellClass: T.Type, for indexPath: IndexPath) -> T?
 }
 
 extension UITableViewCell: ReusableView { }
@@ -19,9 +19,9 @@ extension UITableView: TableViewType {
         register(cellClass, forCellReuseIdentifier: cellClass.reuseIdentifier)
     }
     
-    func dequeue<T: UITableViewCell>(_ cellClass: T.Type, for indexPath: IndexPath) -> T? {
-        return dequeueReusableCell(withIdentifier: cellClass.reuseIdentifier, for: indexPath) as? T
-    }
+//    func dequeue<T: UITableViewCell>(_ cellClass: T.Type, for indexPath: IndexPath) -> T? {
+//        return dequeueReusableCell(withIdentifier: cellClass.reuseIdentifier, for: indexPath) as? T
+//    }
 }
 
 extension UITableView {

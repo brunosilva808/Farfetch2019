@@ -34,7 +34,6 @@ class MarvelAPITests: XCTestCase {
                         stories: nil)
     }
     override func tearDown() {
-        sessionProvider.cancelTask()
         sessionProvider = nil
         character = nil
         super.tearDown()

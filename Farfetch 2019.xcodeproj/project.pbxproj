@@ -24,6 +24,8 @@
 		1538418323704A620096D18F /* ComicCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1538418223704A620096D18F /* ComicCellTests.swift */; };
 		1538418523704D2E0096D18F /* CharacterCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1538418423704D2E0096D18F /* CharacterCellTests.swift */; };
 		1538418723704DA00096D18F /* ContainerCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1538418623704DA00096D18F /* ContainerCellTests.swift */; };
+		1538418B23708C3A0096D18F /* ActivityIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1538418A23708C3A0096D18F /* ActivityIndicatorManager.swift */; };
+		1538418D237093CE0096D18F /* ActivityIndicatorManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1538418C237093CE0096D18F /* ActivityIndicatorManagerTests.swift */; };
 		15FCEB822369C40C00023ADD /* ComicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FCEB7B2369C40C00023ADD /* ComicCell.swift */; };
 		15FCEB842369C40C00023ADD /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FCEB7E2369C40C00023ADD /* CharacterCell.swift */; };
 		15FCEB862369C40C00023ADD /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FCEB812369C40C00023ADD /* BaseCell.swift */; };
@@ -95,6 +97,8 @@
 		1538418223704A620096D18F /* ComicCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicCellTests.swift; sourceTree = "<group>"; };
 		1538418423704D2E0096D18F /* CharacterCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCellTests.swift; sourceTree = "<group>"; };
 		1538418623704DA00096D18F /* ContainerCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerCellTests.swift; sourceTree = "<group>"; };
+		1538418A23708C3A0096D18F /* ActivityIndicatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorManager.swift; sourceTree = "<group>"; };
+		1538418C237093CE0096D18F /* ActivityIndicatorManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorManagerTests.swift; sourceTree = "<group>"; };
 		15FCEB7B2369C40C00023ADD /* ComicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicCell.swift; sourceTree = "<group>"; };
 		15FCEB7E2369C40C00023ADD /* CharacterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		15FCEB812369C40C00023ADD /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
@@ -263,6 +267,7 @@
 				15FD3733236F62240086565C /* CustomImageViewTests.swift */,
 				15FDFEF323671C3800A5739B /* UserDefaultsTests.swift */,
 				15384177237038B40096D18F /* DelegateTests.swift */,
+				1538418C237093CE0096D18F /* ActivityIndicatorManagerTests.swift */,
 				15FD3738236F68240086565C /* Files */,
 			);
 			path = Utils;
@@ -469,6 +474,7 @@
 			isa = PBXGroup;
 			children = (
 				15092EC723687B7A00659DDC /* CustomImageView.swift */,
+				1538418A23708C3A0096D18F /* ActivityIndicatorManager.swift */,
 				15FCEB902369FBC400023ADD /* UserDefaults.swift */,
 				151B4F8A236CB6F200D27AC4 /* Delegated.swift */,
 				151B4F88236B090800D27AC4 /* Global.swift */,
@@ -664,6 +670,7 @@
 				15FDFEDF23671C3500A5739B /* AppDelegate.swift in Sources */,
 				15FDFF2623671E0100A5739B /* ServiceProtocol.swift in Sources */,
 				15092EC823687B7A00659DDC /* CustomImageView.swift in Sources */,
+				1538418B23708C3A0096D18F /* ActivityIndicatorManager.swift in Sources */,
 				151B4F8B236CB6F200D27AC4 /* Delegated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -677,6 +684,7 @@
 				15384178237038B40096D18F /* DelegateTests.swift in Sources */,
 				15FDFEF423671C3800A5739B /* UserDefaultsTests.swift in Sources */,
 				1502E0D5236E324900D06CE2 /* MarvelAPITests.swift in Sources */,
+				1538418D237093CE0096D18F /* ActivityIndicatorManagerTests.swift in Sources */,
 				1538418323704A620096D18F /* ComicCellTests.swift in Sources */,
 				15FD3734236F62240086565C /* CustomImageViewTests.swift in Sources */,
 				15FD3731236F61DF0086565C /* MockFile.swift in Sources */,

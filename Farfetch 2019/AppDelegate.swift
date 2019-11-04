@@ -22,9 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func initRootViewController() {
         window = UIWindow()
-        window?.makeKeyAndVisible()
         window?.backgroundColor = .white
-        window?.rootViewController = ViewController()
+        window?.makeKeyAndVisible()
+        window?.rootViewController = UINavigationController(rootViewController: ViewController())
     }
 
 }

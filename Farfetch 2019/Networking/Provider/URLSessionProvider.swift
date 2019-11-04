@@ -10,11 +10,9 @@ import Foundation
 final class URLSessionProvider: ProviderProtocol {
 
     private var session: URLSessionProtocol
-    private var task: URLSessionDataTask
 
     init(session: URLSessionProtocol = URLSession.shared) {
         self.session = session
-        self.task = URLSessionDataTask()
     }
 
     func request<T>(type: T.Type,
@@ -24,11 +22,10 @@ final class URLSessionProvider: ProviderProtocol {
 
         let request = URLRequest(service: service)
 
-        task = session.dataTask(request: request, completionHandler: { [weak self] data, response, error in
+        session.dataTask(request: request, completionHandler: { [weak self] data, response, error in
             let httpResponse = response as? HTTPURLResponse
             self?.handleDataResponse(data: data, response: httpResponse, error: error, completion: completion, onFinally: onFinally)
-        })
-        task.resume()
+        }).resume()
     }
 
     private func handleDataResponse<T: Decodable>(data: Data?,
@@ -56,8 +53,5 @@ final class URLSessionProvider: ProviderProtocol {
         
         onFinally()
     }
-    
-    func cancelTask() {
-        self.task.cancel()
-    }
+
 }
